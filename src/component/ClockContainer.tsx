@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import { useAppSelector } from '../store/hook';
 import TimeIndicator from './TimeIndicator';
+import HourIndicator from './HourIndicator';
+import MinuteIndicator from './MinuteIndicator';
+import SecondIndicator from './SecondIndicator';
 
 const Container = styled.div`
  width: 100vw;
@@ -30,11 +32,12 @@ const Center = styled.span`
 `;
 
 const ClockContainer = () => {
- const state = useAppSelector((state) => state.clock);
-
  return (
   <Container>
    <Clock>
+    <HourIndicator />
+    <MinuteIndicator />
+    <SecondIndicator />
     <TimeIndicator />
     <Center />
    </Clock>

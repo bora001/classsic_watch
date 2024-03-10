@@ -1,11 +1,10 @@
 import styled from 'styled-components';
+import { TimeProps } from '../common/TimeBar';
+
 const TimeContainer = styled.div`
  position: relative;
 `;
 
-interface TimeProps {
- degree: number;
-}
 const Time = styled.span<TimeProps>`
  position: absolute;
  top: 10px;
