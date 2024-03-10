@@ -1,9 +1,8 @@
 import './App.css';
+import ClockContainer from './component/ClockContainer';
 
 function App() {
-  return (
-    <div>MAIN</div>
-  );
+ return <ClockContainer />;
 }
 
 export default App;
