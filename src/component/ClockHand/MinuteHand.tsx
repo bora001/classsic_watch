@@ -1,7 +1,7 @@
-import TimeBar from '../common/TimeBar';
-import { useAppSelector } from '../store/hook';
+import TimeBar from '../../common/TimeBar';
+import { useAppSelector } from '../../store/hook';
 
-const MinuteIndicator = () => {
+const MinuteHand = () => {
  const minutes = useAppSelector((state) => state.clock.minute);
 
  return (
@@ -11,4 +11,4 @@ const MinuteIndicator = () => {
  );
 };
 
-export default MinuteIndicator;
+export default MinuteHand;

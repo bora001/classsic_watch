@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import TimeBar from '../common/TimeBar';
-import { useAppDispatch, useAppSelector } from '../store/hook';
-import { setHour, setMinutes, setSeconds } from '../store/clockSlice';
+import TimeBar from '../../common/TimeBar';
+import { useAppDispatch, useAppSelector } from '../../store/hook';
+import { setHour, setMinutes, setSeconds } from '../../store/clockSlice';
 
-const SecondIndicator = () => {
+const SecondHand = () => {
  const dispatch = useAppDispatch();
  const state = useAppSelector((state) => state.clock);
 
@@ -33,4 +33,4 @@ const SecondIndicator = () => {
  );
 };
 
-export default SecondIndicator;
+export default SecondHand;
