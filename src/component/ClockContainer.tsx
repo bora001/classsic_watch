@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-import TimeIndicator from './TimeIndicator';
 import { useState } from 'react';
 import TimeTooltip from './TimeTooltip';
-import HourHand from './ClockHand/HourHand';
-import MinuteHand from './ClockHand/MinuteHand';
-import SecondHand from './ClockHand/SecondHand';
+import ClockHandBox from './ClockHand/ClockHandBox';
+import ClockUI from './ClockUI/ClockUI';
 
 const Container = styled.div`
  width: 100vw;
@@ -20,25 +18,13 @@ const Clock = styled.div`
  height: 300px;
  border-radius: 300px;
  border: 10px solid black;
- position: relative;
-`;
-
-const Center = styled.span`
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- width: 10px;
- height: 10px;
- border-radius: 10px;
- background-color: black;
 `;
 
 const ClockContainer = () => {
  const [isOver, setIsOver] = useState(false);
  const [[left, top], setPosition] = useState<number[]>([]);
  const onOver = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-  setPosition([e.clientX - 310, e.clientY - 240]);
+  setPosition([e.clientX + 5, e.clientY - 20]);
   setIsOver(true);
  };
 
@@ -46,11 +32,8 @@ const ClockContainer = () => {
   <Container>
    <Clock onMouseMove={onOver} onMouseLeave={() => setIsOver(false)}>
     <TimeTooltip {...{ left, top, isOver }} />
-    <HourHand />
-    <MinuteHand />
-    <SecondHand />
-    <TimeIndicator />
-    <Center />
+    <ClockHandBox />
+    <ClockUI />
    </Clock>
   </Container>
  );

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { TimeProps } from '../common/TimeBar';
-import { getTimeDegree } from '../utils/getTimeDegree';
+import { TimeProps } from '../../common/TimeBar';
+import { getTimeDegree } from '../../utils/getTimeDegree';
 
 const TimeContainer = styled.div`
  position: relative;
