@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export interface TimeProps {
- degree: number;
+ $degree: number;
 }
 export interface TimeBarComponentProps {
- degree: string;
+ $degree: string;
  height: number;
 }
 const TimeBarComponent = styled.span<TimeBarComponentProps>`
@@ -20,10 +20,10 @@ const TimeBarComponent = styled.span<TimeBarComponentProps>`
   background: #000;
   content: '';
  }
- transform: ${({ degree }) => degree};
+ transform: ${({ $degree }) => $degree};
 `;
-const TimeBar = ({ degree, height }: TimeBarComponentProps) => {
- return <TimeBarComponent {...{ degree, height }} />;
+const TimeBar = ({ degree, height }: { degree: string; height: number }) => {
+ return <TimeBarComponent height={height} $degree={degree} />;
 };
 
 export default TimeBar;

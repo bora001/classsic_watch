@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { TimeProps } from '../common/TimeBar';
+import { getTimeDegree } from '../utils/getTimeDegree';
 
 const TimeContainer = styled.div`
  position: relative;
@@ -10,7 +11,7 @@ const Time = styled.span<TimeProps>`
  top: 10px;
  width: 30px;
  left: -15px;
- transform: ${({ degree }) => `rotate(${(degree + 1) * -(360 / 12)}deg)`};
+ transform: ${({ $degree }) => `rotate(-${getTimeDegree($degree)}deg)`};
  text-align: center;
 `;
 
@@ -18,7 +19,7 @@ const Bar = styled.span<TimeProps>`
  position: absolute;
  left: 50%;
  height: 300px;
- transform: ${({ degree }) => `rotate(${(degree + 1) * (360 / 12)}deg)`};
+ transform: ${({ $degree }) => `rotate(${getTimeDegree($degree)}deg)`};
 `;
 
 const TimeIndicator = () => {
@@ -26,8 +27,8 @@ const TimeIndicator = () => {
  return (
   <TimeContainer>
    {time.map((key, index) => (
-    <Bar key={key} degree={index}>
-     <Time degree={index}>{key}</Time>
+    <Bar key={key} $degree={index}>
+     <Time $degree={index}>{key}</Time>
     </Bar>
    ))}
   </TimeContainer>
