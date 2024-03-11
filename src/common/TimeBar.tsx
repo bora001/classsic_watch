@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CLOCK_VALUE, TIME_HAND_VALUE } from '../constants/common';
 
 export interface TimeProps {
  $degree: number;
@@ -10,13 +11,13 @@ export interface TimeBarComponentProps {
 const TimeBarComponent = styled.span<TimeBarComponentProps>`
  position: absolute;
  left: 50%;
- height: 300px;
+ height: ${CLOCK_VALUE.size}px;
  &:after {
-  left: calc(50% - 1.5px);
   position: absolute;
-  width: 3px;
-  width: ${({ color }) => `${color ? 4 : 1.5}px`};
-  top: ${({ height }) => `${150 - height}px`};
+  left: ${({ color }) =>
+   `calc(50% - ${color ? TIME_HAND_VALUE.hour / 2 : TIME_HAND_VALUE.normal / 2}px)`};
+  width: ${({ color }) => `${color ? TIME_HAND_VALUE.hour : TIME_HAND_VALUE.normal}px`};
+  top: ${({ height }) => `${CLOCK_VALUE.size / 2 - height}px`};
   height: ${({ height }) => `${height}px`};
   background: ${({ color }) => `${color ?? '#000'}`};
   content: '';

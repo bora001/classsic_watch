@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { TimeProps } from '../../common/TimeBar';
 import { getTimeDegree } from '../../utils/getTimeDegree';
+import { CLOCK_VALUE } from '../../constants/common';
 
 const TimeContainer = styled.div`
  position: relative;
@@ -18,7 +19,7 @@ const Time = styled.span<TimeProps>`
 const Bar = styled.span<TimeProps>`
  position: absolute;
  left: 50%;
- height: 300px;
+ height: ${CLOCK_VALUE.size}px;
  transform: ${({ $degree }) => `rotate(${getTimeDegree($degree)}deg)`};
 `;
 

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import TimeTooltip from './TimeTooltip';
 import ClockHandBox from './ClockHand/ClockHandBox';
 import ClockUI from './ClockUI/ClockUI';
+import { CLOCK_VALUE } from '../constants/common';
 
 const Container = styled.div`
  width: 100vw;
@@ -14,9 +15,9 @@ const Container = styled.div`
 `;
 
 const Clock = styled.div`
- width: 300px;
- height: 300px;
- border-radius: 300px;
+ width: ${CLOCK_VALUE.size}px;
+ height: ${CLOCK_VALUE.size}px;
+ border-radius: ${CLOCK_VALUE.size}px;
  border: 10px solid black;
 `;
 
